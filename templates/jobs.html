@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Job Opportunities</h2>
+
+    {% if jobs %}
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <strong>{{ job.title }}</strong> ({{ job.location }})<br>
+                    {{ job.description }}<br>
+                    <em>Status: {{ job.status }}</em>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No jobs available</p>
+    {% endif %}
+{% endblock %}
